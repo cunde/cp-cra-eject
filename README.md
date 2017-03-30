@@ -10,7 +10,40 @@
 ### react-router
 
 当前项目是不支持[`react-router`](https://reacttraining.com/react-router/web/api/BrowserRouter)的，我们需要搞点事情：<br>
++ 我们修改修改了入口文件`index.js`
 
+    ```js
+    import ReactDOM from 'react-dom';
+    import RoutersList from './routers';
+
+    ReactDOM.render(
+      RoutersList,
+      document.getElementById('root')
+    );
+
+```
++ 添加路由集合文件`routers.jsx`
+
+    ```js
+    import React from 'react';
+    import {Router,Route,Switch} from 'react-router';
+    import createBrowserHistory from 'history/createBrowserHistory';
+    const history = createBrowserHistory();
+
+    // NOTE: starting page引入
+    import HomePage from './App';
+
+    // NOTE: ending
+    export default (
+        <Router history={history}>
+            <Switch>
+                <Route exact={true} path='/' component={HomePage} />
+            </Switch>
+        </Router>
+    )
+
+    ```
+**现在我们可以简单使用当前的脚手架了**
 
 ### react-css-modules的使用：
 

@@ -4,7 +4,6 @@ import styles from'./App.css';
 
 class App extends Component {
   render() {
-      console.log(styles,'@styles');
     return (
       <div styleName="App">
         hello
