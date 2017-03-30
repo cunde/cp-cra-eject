@@ -10,6 +10,7 @@
 ### react-router
 
 当前项目是不支持[`react-router`](https://reacttraining.com/react-router/web/api/BrowserRouter)的，我们需要搞点事情：<br>
+
 + 我们修改修改了入口文件`index.js`
 
     ```js
@@ -20,8 +21,8 @@
       RoutersList,
       document.getElementById('root')
     );
+    ```
 
-```
 + 添加路由集合文件`routers.jsx`
 
     ```js
@@ -43,6 +44,7 @@
     )
 
     ```
+
 **现在我们可以简单使用当前的脚手架了**
 
 ### react-css-modules的使用：
