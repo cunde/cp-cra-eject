@@ -26,3 +26,32 @@
 + git st执行之后我们会看到被修改的文件
 + git commit -m "text"
 + 此时我们就需要在远程git上创建‘cp-cra-eject’的仓库
+    ![image](https://github.com/cunde/cp-cra-eject/blob/master/mdimg/744F2EEE-E158-4B8D-B696-3835A2C379BC.png)
+
++ 之后我们就需要执行git remote add <name> <url>
+
+    ```
+    $ git remote add origin <仓库的git地址了>
+    ```
+
++ git pull origin master
++ git push -u origin master 一般我们执行此命令时会出现错误：
+    ![image](https://github.com/cunde/cp-cra-eject/blob/master/mdimg/98409394-8725-40AE-A189-BF09ACFFE2E8.png)
+
++ 处理以上的错误我们执行 git push -f origin master 强制操作
+
+以上操作我们就已经把当前项目提交到git仓库中了。**但是我们再次修改时候直接执行push 操作的时候会有提示操作。我们直接按git提示就可以搞定了**<br>
+
+#### 梳理执行过程：
+
+```
+    git init
+    git add .
+    git commit -m 'text'
+    创建git仓库
+    git pull origin master
+    git remote add origin <git url>
+    git push -f origin master
+    git push --set-upstream origin master || git push -u origin master
+```
+:pray: 以上操作应该可以满足你的需求了
