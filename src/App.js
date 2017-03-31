@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import CSSModule from 'react-css-modules';
 import styles from'./App.css';
 
+@CSSModule(styles, {allowMultiple: true})
+
 class App extends Component {
   render() {
     return (
@@ -12,4 +14,4 @@ class App extends Component {
   }
 }
 
-export default CSSModule(App, styles);
+export default App;

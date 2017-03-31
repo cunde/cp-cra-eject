@@ -6,6 +6,19 @@
 
 + [react-css-modules的使用](#react-css-modules的使用)
 + [react-router](#react-router)
++ [How to add support for decorators](#How-to-add-support-for-decorators)
+
+### How to add support for decorators
+
+我们在很多地方都有看到如下写法的：
+
+```
+import CSSModule from 'react-css-modules';
+import styles from'./App.css';
+@CSSModule(styles, {allowMultiple: true})
+```
+当我们默认启用`create-react-app`创建项目的时候默认是不支持decorators的，我们当前为了项目更友好的支持当前写法，我们对项目做了相应的修改：<br>
+**我们只需要对`config/webpack.config.dev.js`的`js|jsx`的`query`中添加`plugins: ['transform-decorators-legacy' ]`重启。就可以搞定了！**
 
 ### react-router
 
